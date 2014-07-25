@@ -1,0 +1,27 @@
+{{!< default}}
+{{#each posts}}
+{{! Post wrap: }}<div class="postwrap_nix">
+{{! Post top:/ }}<div class="posttop_nix"></div>
+{{! Post mid: }}<div class="postmid_nix">
+
+{{! Article | Post inner: }}<article class="postinner_nix" role="article" itemscope itemtype="https://schema.org/BlogPosting">
+
+{{! Article header:/ }}<header>
+{{! Article time | Post info:/ }}<div class="postinfo_nix"><time datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time></div>
+{{! Article headline:/ }}<h1 class="posttitle_nix" itemprop="headline"><a href="{{{url}}}" rel="bookmark">{{{title}}}</a></h1>
+</header>{{! /Article header }}
+
+{{! Article body:/ }}<div class="postbody_nix nixclear" itemprop="articleBody">{{{content}}}</div>
+
+</article>{{! /Article | Post inner }}
+
+</div>{{! /Post mid }}
+{{! Post bottom:/ }}<div class="postbottom_nix"></div>
+</div>{{! /Post wrap }}
+{{/each}}
+
+{{#if pagination}}
+<div class="subwrap_nix"><div class="subtop_nix"></div>
+<div class="pagination_nix">{{{pagination}}}</div>
+</div>
+{{/if}}
